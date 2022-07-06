@@ -1,0 +1,60 @@
+.example-tree-invisible {
+  display: none;
+}
+
+.example-tree ul,
+.example-tree li {
+  margin-top: 0;
+  margin-bottom: 0;
+  list-style-type: none;
+}
+
+.example-tree .mat-nested-tree-node div[role=group] {
+  padding-left: 40px;
+}
+
+.example-tree div[role=group] > .mat-tree-node {
+  padding-left: 40px;
+}
+.mat-tree-node {
+  cursor: pointer;
+}
+
+.mat-tree-node:hover {
+  text-decoration: underline;
+}
+
+.fullTree {
+  width: 50%;
+}
+
+.mat-tree ::ng-deep {
+  background: #263339 ;
+}
+
+.mat-tree-node, .mat-nested-tree-node ::ng-deep {
+  color: white;
+}
+
+.mat-tree-node ::ng-deep {
+  min-height: 20px;
+}
+
+button {
+  background: #263339;
+  color: white;
+  border: 0px;
+}
+
+.pl-5 {
+  padding-left: 5rem;
+}
+
+.ml-5 {
+  margin-left: 1rem;
+}
+
+.w-5 {
+  width: 7rem;
+}
+

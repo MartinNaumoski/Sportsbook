@@ -1,0 +1,30 @@
+<div class="matches-grid">
+  <div *ngIf = '!loadingBarFlag'>
+    <table *ngIf = 'errorFlag'>
+      <tr>
+        <th>Date</th>
+        <th>Pair</th>
+        <ng-container *ngFor = 'let odd of layoutsData'>
+          <th *ngFor = 'let element of odd.odds'>
+            {{ element.name }}
+          </th>
+        </ng-container>
+      </tr>
+      <ng-container *ngFor = 'let pair of matchesData.data'>
+        <tr>
+          <td>{{ pair.sd | date:"MM-dd HH:mm" }}</td>
+          <td>{{ pair.h }} - {{ pair.a }}</td>
+          <ng-container *ngFor = 'let odd of layoutsData'>
+            <td *ngFor = 'let element of odd.odds'>
+              {{ getCoefficient(pair,odd,element) }}
+            </td>
+          </ng-container>
+        </tr>
+      </ng-container>
+  </table>
+  </div>
+  <div *ngIf = '!errorFlag'>
+    <h2>There is no information for this league. Please try again later...</h2>
+  </div>
+  <div class="loader" *ngIf = 'loadingBarFlag'></div>  
+</div>
